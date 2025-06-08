@@ -1,14 +1,14 @@
--name:Deploy to tomcat
-hosts:web
-become:yes
-tasks:
-	-name:copy WAR file to Tomcat
-	 copy:
-	  src:"/var/lib/jenkins/workspace/Ansible-CICD/target/myAnsibleWebApp.war"
-	  dest:"/opt/tomcat/webapps/myAnsibleWebApp.war"
-	  remote_src:no
-	 
-	-name:Restart Tomcat
-	systemd:
-	  name:tomcat
-	  state:restarted
+- name: Deploy to tomcat
+  hosts: web
+  become: yes
+  tasks:
+   - name: copy WAR file to Tomcat
+     copy:
+      src: "/var/lib/jenkins/workspace/ansible-CICD/target/myAnsibleWebApp.war"
+      dest: "/opt/tomcat/webapps/myAnsibleWebApp.war"
+      remote_src: no
+ 
+   - name: Restart Tomcat
+     systemd:
+      name: tomcat
+      state: restarted
