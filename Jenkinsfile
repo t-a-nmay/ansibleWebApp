@@ -8,7 +8,7 @@ pipeline{
      stages{
           stage('Checkout'){
                steps{
-                    git branch:'master', url: 'https://github.com/t-a-nmay/myAnsibleWebApp.git'
+                    git branch:'master', url: 'https://github.com/t-a-nmay/ansibleWebApp.git'
                }
           }
           stage('Build'){
