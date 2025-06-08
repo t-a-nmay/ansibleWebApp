@@ -24,7 +24,7 @@ pipeline{
           stage('Deploy'){
                steps{
                     sh 'mvn clean install'
-                    sh 'ansible-playbook ansible/playbook.yml -i ansible/hosts.ini
+                    sh 'ansible-playbook ansible/playbook.yml -i ansible/hosts.ini'
                }
           }
           
